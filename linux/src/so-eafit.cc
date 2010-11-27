@@ -1,11 +1,37 @@
+#ifndef _STDIOH
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/dir.h>
-#include <sys/param.h>
+#define _STDIOH 1
+#endif
 
+#ifndef _STDLIBH
+#include <stdlib.h>
+#define _STDLIBH 1
+#endif
+
+#ifndef _STRINGH
+#include <string.h>
+#define _STRINGH 1
+#endif
+
+#ifndef _UNISTDH
+#include <unistd.h>
+#define _UNISTDH 1
+#endif
+
+#ifndef _SYS_TYPESH
+#include <sys/types.h>
+#define _SYS_TYPESH 1
+#endif
+
+#ifndef _SYS_DIRH
+#include <sys/dir.h>
+#define _SYS_DIRH 1
+#endif
+
+#ifndef _SYS_PARAMH
+#include <sys/param.h>
+#define _SYS_PARAMH
+#endif
 
 int inside_is_a_process_dir(const struct direct *element)
 {
@@ -20,7 +46,7 @@ int *GetProcessList(int *nroProcesos)
   struct direct **procs;
   if(chdir(proc_path) != 0)
     {
-      perror("Error getting the following path ");
+      perror("Error getting the proc path");
       perror(proc_path);
       return NULL;
     }
@@ -60,14 +86,14 @@ float CpuUsage()
 }
 
 
-int main()
-{
-  int n;
-  int *ans = GetProcessList(&n);
-  for(int i = 0; i < n; ++i)
-    printf("%d\n", ans[i]);
-  CpuUsage();
-  sleep(10);
-  printf("The usage of the cpu is %f\n", CpuUsage());
-  return 0;
-}
+// int main()
+// {
+//   int n;
+//   int *ans = GetProcessList(&n);
+//   for(int i = 0; i < n; ++i)
+//     printf("%d\n", ans[i]);
+//   CpuUsage();
+//   sleep(10);
+//   printf("The usage of the cpu is %f\n", CpuUsage());
+//   return 0;
+// }
