@@ -1,0 +1,6 @@
+; dlltool --base-file C:\Users\EY\AppData\Local\Temp/cca03888.base --output-exp so-eafit.exp --dllname so-eafit.dll --output-def libso-eafit.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\Users\EY\AppData\Local\Temp/cca03888.def --output-lib libso-eafit.a
+EXPORTS
+;	GetProcessList(int*)
+	_Z14GetProcessListPi @ 1
+;	GetCpuUsage()
+	_Z11GetCpuUsagev @ 2

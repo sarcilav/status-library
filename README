@@ -7,3 +7,14 @@ make install  |||| or |||| sudo make install
 and when you want to use this lib you only need to 
 include #include <so-eafit.h> and use the following flag to compile
 -lso-eafit
+
+Instrucciones para compilar y crear la libreri•a en Windows.
+
+
+
+La forma de instalar un .dll en Windows, es simplemente copiar el archivo en el directorio C:\Windows\System32
+
+Las opciones de compilaci€n del IDE que utilizamos Dev-cpp permiti€ crear la librerÃa din∑mica.
+
+En el momento de compilar , en las opciones de compilador, agregamos al linker Òlso-eafit.
+
