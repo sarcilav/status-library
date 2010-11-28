@@ -1,0 +1,9 @@
+* Instructions to compile the lib in linux 
+goto linux/src (cd linux/src)
+and run the make like:
+    make all
+if you want to install, you must be root or use sudo
+make install  |||| or |||| sudo make install
+and when you want to use this lib you only need to 
+include #include <so-eafit.h> and use the following flag to compile
+-lso-eafit
